@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Class Plan Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1> Class Plan Generator</h1>
+
+    <label for="difficulty">Select Difficulty:</label>
+    <select id="difficulty">
+        <option value="beginner">Beginner</option>
+        <option value="intermediate">Intermediate</option>
+        <option value="advanced">Advanced</option>
+    </select>
+
+    <br><br>
+
+    <button onclick="generateClass()">Generate Class Plan</button>
+
+    <pre id="output"></pre>
+
+    <button onclick="copyPlan()">Copy Plan</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
