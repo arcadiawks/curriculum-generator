@@ -94,10 +94,11 @@ function generateClass() {
     const level = document.getElementById("difficulty").value;
     const data = curriculum[level];
 
+    // How many items per difficulty?
     const counts = {
-        beginner: { hyung: 2, hand: 2, leg: 2, tech: 3},
-        intermediate: { hyung: 2, hand: 3, leg: 3, tech: 4},
-        advanced: { hyung: 2, hand: 4, leg: 4, tech: 5},
+        beginner: { hyung: 1, hand: 2, leg: 2, tech: 3 },
+        intermediate: { hyung: 1, hand: 3, leg: 3, tech: 4 },
+        advanced: { hyung: 1, hand: 4, leg: 4, tech: 5 }
     };
 
     const c = counts[level];
@@ -107,23 +108,24 @@ function generateClass() {
     const legs = pickMultiple(data.legstrikes, c.leg);
     const techs = pickMultiple(data.techniques, c.tech);
 
-    const plan = `
-    Difficulty: ${level.toUpperCase()}
-    
-    Hyungs: 
-    ${hyungs.map(x => "• " + x).join("\n")}
+    const plan = 
+`Difficulty: ${level.toUpperCase()}
 
-    Hand Strike: 
-    ${hands.map(x => "• " + x).join("\n")}
+Hyungs:
+${hyungs.map(x => "• " + x).join("\n")}
 
-    Leg Strike:
-    ${legs.map(x => "• " + x).join("\n")}
-    Technique: 
-    ${techs.map(x => "• " + x).join("\n")}
-    `;
+Hand Strikes:
+${hands.map(x => "• " + x).join("\n")}
+
+Leg Strikes:
+${legs.map(x => "• " + x).join("\n")}
+
+Techniques:
+${techs.map(x => "• " + x).join("\n")}`;
 
     document.getElementById("output").innerText = plan;
 }
+
 
 // ===============================
 // COPY TO CLIPBOARD
